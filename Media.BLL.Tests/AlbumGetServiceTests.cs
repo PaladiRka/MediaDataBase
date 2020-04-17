@@ -15,7 +15,7 @@ namespace Media.BLL.Tests
     public class AlbumGetServiceTests
     {
         [Test]
-        public async Task ValidateAsync_CinemaExists_DoesNothing()
+        public async Task ValidateAsync_AlbumExists_DoesNothing()
         {
             // Arrange
             var albumContainer = new Mock<IAlbumContainer>();
@@ -34,7 +34,7 @@ namespace Media.BLL.Tests
         }
         
         [Test]
-        public async Task ValidateAsync_CinemaNotExists_ThrowsError()
+        public async Task ValidateAsync_AlbumNotExists_ThrowsError()
         {
             // Arrange
             var fixture = new Fixture();

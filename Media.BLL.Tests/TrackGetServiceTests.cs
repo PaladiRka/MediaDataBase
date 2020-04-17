@@ -15,26 +15,26 @@ namespace Media.BLL.Tests
     public class TrackGetServiceTests
     {
         [Test]
-        public async Task ValidateAsync_MovieExists_DoesNothing()
+        public async Task ValidateAsync_TrackExists_DoesNothing()
         {
             // Arrange
-            var departmentContainer = new Mock<ITrackContainer>();
+            var trackContainer = new Mock<ITrackContainer>();
 
             var track = new Track();
             var trackDataAccess = new Mock<ITrackDataAccess>();
-            trackDataAccess.Setup(x => x.GetByAsync(departmentContainer.Object)).ReturnsAsync(track);
+            trackDataAccess.Setup(x => x.GetByAsync(trackContainer.Object)).ReturnsAsync(track);
 
             var trackGetService = new TrackGetService(trackDataAccess.Object);
             
             // Act
-            var action = new Func<Task>(() => trackGetService.ValidateAsync(departmentContainer.Object));
+            var action = new Func<Task>(() => trackGetService.ValidateAsync(trackContainer.Object));
             
             // Assert
             await action.Should().NotThrowAsync<Exception>();
         }
         
         [Test]
-        public async Task ValidateAsync_MovieNotExists_ThrowsError()
+        public async Task ValidateAsync_TrackNotExists_ThrowsError()
         {
             // Arrange
             var fixture = new Fixture();

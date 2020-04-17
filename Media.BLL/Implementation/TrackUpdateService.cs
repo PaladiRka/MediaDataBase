@@ -9,17 +9,17 @@ namespace Media.BLL.Implementation
     public class TrackUpdateService : ITrackUpdateService
     {
         private ITrackDataAccess TrackDataAccess { get; }
-       // private IAlbumGetService AlbumGetService { get; }
+        private IAlbumGetService AlbumGetService { get; }
 
-        public TrackUpdateService(ITrackDataAccess albumDataAccess)//, IAlbumGetService albumGetService
+        public TrackUpdateService(ITrackDataAccess trackDataAccess, IAlbumGetService albumGetService)
         {
-            TrackDataAccess = albumDataAccess;
-           // AlbumGetService = albumGetService;
+            TrackDataAccess = trackDataAccess;
+            AlbumGetService = albumGetService;
         }
 
         public async Task<Track> UpdateAsync(TrackUpdateModel track)
         {
-          //  await AlbumGetService.ValidateAsync(track);
+          await AlbumGetService.ValidateAsync(track);
           return await TrackDataAccess.UpdateAsync(track);
 
         }

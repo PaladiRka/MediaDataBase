@@ -10,15 +10,18 @@ namespace Media.BLL.Implementation
     public class TrackCreateService : ITrackCreateService
     {
         private ITrackDataAccess TrackDataAccess { get; }
+        private IAlbumGetService AlbumGetService { get; }
 
-        public TrackCreateService(ITrackDataAccess albumDataAccess)
+        public TrackCreateService(ITrackDataAccess trackDataAccess, IAlbumGetService albumGetService)
         {
-            TrackDataAccess = albumDataAccess;
+            TrackDataAccess = trackDataAccess;
+            AlbumGetService = albumGetService;
         }
 
-        public Task<Track> CreateAsync(TrackUpdateModel track)
+        public async Task<Track> CreateAsync(TrackUpdateModel track)
         {
-            return TrackDataAccess.InsertAsync(track);
+            await AlbumGetService.ValidateAsync(track);
+            return await TrackDataAccess.InsertAsync(track);
 
         }
     }
