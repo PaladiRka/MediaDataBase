@@ -18,7 +18,7 @@ namespace Media.WebAPI.Controllers
     [Route("api/album")]
     public class AlbumController
     {
-         private ILogger<AlbumController> Logger { get; }
+        private ILogger<AlbumController> Logger { get; }
         private IAlbumCreateService AlbumCreateService { get; }
         private IAlbumGetService AlbumGetService { get; }
         private IAlbumUpdateService AlbumUpdateService { get; }

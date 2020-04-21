@@ -7,7 +7,6 @@ using Media.DataAccess.Entities;
 using Media.Domain.Contracts;
 using Album = Media.Domain.Album;
 
-
 namespace Media.BLL.Implementation
 {
     public class AlbumGetService : IAlbumGetService

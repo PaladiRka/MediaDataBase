@@ -11,7 +11,6 @@ using AutoMapper;
 using Media.DataAccess.Entities;
 using Album = Media.Domain.Album;
 
-
 namespace Media.DataAccess.Implementations
 {
     public class AlbumDataAccess : IAlbumDataAccess
@@ -28,9 +27,7 @@ namespace Media.DataAccess.Implementations
         public async Task<Album> InsertAsync(AlbumUpdateModel album)
         {
             var result = await this.Context.AddAsync(this.Mapper.Map<DataAccess.Entities.Album>(album));
-
             await this.Context.SaveChangesAsync();
-
             return this.Mapper.Map<Album>(result.Entity);
         }
 
@@ -44,7 +41,6 @@ namespace Media.DataAccess.Implementations
         public async Task<Album> GetAsync(IAlbumIdentity album)
         {
             var result = await this.Get(album);
-
             return this.Mapper.Map<Album>(result);
         }
 
@@ -70,7 +66,6 @@ namespace Media.DataAccess.Implementations
 
         private async Task<Media.DataAccess.Entities.Album> Get(IAlbumIdentity album)
         {
-          
             if(album == null)
                 throw new ArgumentNullException(nameof(album));
             return await this.Context.Album.FirstOrDefaultAsync(x => x.Id == album.Id);

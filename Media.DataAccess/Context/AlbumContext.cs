@@ -16,6 +16,7 @@ namespace Media.DataAccess.Context
 
         public virtual DbSet<Album> Album { get; set; }
         public virtual DbSet<Track> Track { get; set; }
+        public virtual DbSet<Track> Author { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,6 +44,15 @@ namespace Media.DataAccess.Context
                         .HasConstraintName("FK_Track_Album");
                 });
 
+            modelBuilder.Entity<Author>(entity =>
+                {
+                    entity.Property(a => a.Id).UseIdentityColumn().Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
+                    entity.Property(a => a.Name).IsRequired();
+                    // entity.HasOne(s => s.Album)
+                    //     .WithMany(c => c.Track)
+                    //     .HasForeignKey(s => s.AlbumId)
+                    //     .HasConstraintName("FK_Track_Album");
+                });
             this.OnModelCreatingPartial(modelBuilder);
         }
 

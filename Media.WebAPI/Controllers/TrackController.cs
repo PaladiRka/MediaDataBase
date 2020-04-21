@@ -18,7 +18,7 @@ namespace Media.WebAPI.Controllers
     [Route("api/track")]
     public class TrackController
     {
-         private ILogger<TrackController> Logger { get; }
+        private ILogger<TrackController> Logger { get; }
         private ITrackCreateService TrackCreateService { get; }
         private ITrackGetService TrackGetService { get; }
         private ITrackUpdateService TrackUpdateService { get; }

@@ -22,6 +22,10 @@ namespace Media.WebAPI
             this.CreateMap<TrackCreateDTO, TrackUpdateModel>();
             this.CreateMap<TrackUpdateDTO, TrackUpdateModel>();
             this.CreateMap<TrackUpdateModel, DataAccess.Entities.Track>();
+
+            // this.CreateMap<TrackCreateDTO, TrackUpdateModel>();
+            // this.CreateMap<TrackUpdateDTO, TrackUpdateModel>();
+            // this.CreateMap<TrackUpdateModel, DataAccess.Entities.Track>();
         }
     }
 }

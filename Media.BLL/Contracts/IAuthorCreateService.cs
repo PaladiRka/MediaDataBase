@@ -4,8 +4,8 @@ using Media.Domain.Models;
 
 namespace Media.BLL.Contracts
 {
-    public interface ITrackUpdateService
+    public interface IAuthorCreateService
     {
-        Task<Track> UpdateAsync(TrackUpdateModel track);
+        Task<Author> CreateAsync(AuthorUpdateModel author);
     }
 }

@@ -9,13 +9,15 @@ namespace Media.Domain
         
         //Название книги
         public string Title { get; set; }
-
-        //Автор
-        public string Author { get; set; }
+        //
+        // //Автор
+        // public string Author { get; set; }
 
         //Длительность
         public int Duration { get; set; }
         public Album Album { get; set; }
         public int? AlbumId => Album.Id;
+        public Author Author { get; set; }
+        public int? AuthorId => Author.Id;
     }
 }
