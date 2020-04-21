@@ -4,8 +4,8 @@ using Media.Domain.Models;
 
 namespace Media.BLL.Contracts
 {
-    public interface IAuthorUpdateService
+    public interface IPodcastCreateService
     {
-        Task<Author> UpdateAsync(AuthorUpdateModel author);
+        Task<Podcast> CreateAsync(PodcastUpdateModel podcast);
     }
 }

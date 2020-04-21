@@ -2,11 +2,11 @@
 
 namespace Media.Domain.Models
 {
-    public class AuthorIdentityModel : IAuthorIdentity
+    public class PodcastIdentityModel : IPodcastIdentity
     {
         public int Id { get; }
 
-        public AuthorIdentityModel(int id)
+        public PodcastIdentityModel(int id)
         {
             this.Id = id;
         }

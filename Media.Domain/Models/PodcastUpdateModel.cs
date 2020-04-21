@@ -1,22 +1,20 @@
 ﻿using Media.Domain.Contracts;
 
-namespace Media.Domain
+namespace Media.Domain.Models
 {
-    public class Track : IAlbumContainer
+    public class PodcastUpdateModel : IPodcastIdentity, IAlbumContainer
     {
-        //идентификатор
         public int Id { get; set; }
-        
+
         //Название книги
         public string Title { get; set; }
-        
+
         //Автор
         public string Author { get; set; }
 
-        //Длительность
+        //Возрастное ограничение
         public int Duration { get; set; }
-        public Album Album { get; set; }
-        public int? AlbumId => Album.Id;
 
+        public int? AlbumId { get; set; }
     }
 }

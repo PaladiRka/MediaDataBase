@@ -10,10 +10,12 @@ namespace Media.DataAccess.Entities
         public Album()
         {
             this.Track = new HashSet<Track>();
+            this.Podcast = new HashSet<Podcast>();
         }
         
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual ICollection<Track> Track { get; set; }
+        public virtual ICollection<Podcast> Podcast { get; set; }
 
         //Идентификатор
         public int Id { get; set; }

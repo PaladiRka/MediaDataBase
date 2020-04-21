@@ -2,7 +2,7 @@
 
 namespace Media.Client.Requests.Update
 {
-    public class AuthorUpdateDTO : AuthorCreateDTO
+    public class PodcastUpdateDTO : PodcastCreateDTO
     {
         public int Id { get; set; }
     }

@@ -38,13 +38,19 @@ namespace Media.WebAPI
             services.Add(new ServiceDescriptor(typeof(IAlbumCreateService),typeof(AlbumCreateService), ServiceLifetime.Scoped));
             services.Add(new ServiceDescriptor(typeof(IAlbumGetService),typeof(AlbumGetService), ServiceLifetime.Scoped));
             services.Add(new ServiceDescriptor(typeof(IAlbumUpdateService),typeof(AlbumUpdateService), ServiceLifetime.Scoped));
+            
             services.Add(new ServiceDescriptor(typeof(ITrackCreateService),typeof(TrackCreateService), ServiceLifetime.Scoped));
             services.Add(new ServiceDescriptor(typeof(ITrackGetService),typeof(TrackGetService), ServiceLifetime.Scoped));
             services.Add(new ServiceDescriptor(typeof(ITrackUpdateService),typeof(TrackUpdateService), ServiceLifetime.Scoped));
+            
+            services.Add(new ServiceDescriptor(typeof(IPodcastCreateService),typeof(PodcastCreateService), ServiceLifetime.Scoped));
+            services.Add(new ServiceDescriptor(typeof(IPodcastGetService),typeof(PodcastGetService), ServiceLifetime.Scoped));
+            services.Add(new ServiceDescriptor(typeof(IPodcastUpdateService),typeof(PodcastUpdateService), ServiceLifetime.Scoped));
 
             //DataAccess
             services.Add(new ServiceDescriptor(typeof(IAlbumDataAccess), typeof(AlbumDataAccess), ServiceLifetime.Transient));
             services.Add(new ServiceDescriptor(typeof(ITrackDataAccess), typeof(TrackDataAccess), ServiceLifetime.Transient));
+            services.Add(new ServiceDescriptor(typeof(IPodcastDataAccess), typeof(PodcastDataAccess), ServiceLifetime.Transient));
 
             //DB Contexts
             services.AddDbContext<AlbumContext>(options =>

@@ -12,8 +12,11 @@ namespace Media.WebAPI
         {
             this.CreateMap<DataAccess.Entities.Album, Domain.Album>();
             this.CreateMap<DataAccess.Entities.Track, Domain.Track>();
+            this.CreateMap<DataAccess.Entities.Podcast, Domain.Podcast>();
+
             this.CreateMap<Domain.Album, AlbumDTO>();
             this.CreateMap<Domain.Track, TrackDTO>();
+            this.CreateMap<Domain.Podcast, PodcastDTO>();
 
             this.CreateMap<AlbumCreateDTO, AlbumUpdateModel>();
             this.CreateMap<AlbumUpdateDTO, AlbumUpdateModel>();
@@ -23,9 +26,9 @@ namespace Media.WebAPI
             this.CreateMap<TrackUpdateDTO, TrackUpdateModel>();
             this.CreateMap<TrackUpdateModel, DataAccess.Entities.Track>();
 
-            // this.CreateMap<TrackCreateDTO, TrackUpdateModel>();
-            // this.CreateMap<TrackUpdateDTO, TrackUpdateModel>();
-            // this.CreateMap<TrackUpdateModel, DataAccess.Entities.Track>();
+            this.CreateMap<PodcastCreateDTO, PodcastUpdateModel>();
+            this.CreateMap<PodcastUpdateDTO, PodcastUpdateModel>();
+            this.CreateMap<PodcastUpdateModel, DataAccess.Entities.Podcast>();
         }
     }
 }

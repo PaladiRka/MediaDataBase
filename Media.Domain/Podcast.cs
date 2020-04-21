@@ -2,7 +2,7 @@
 
 namespace Media.Domain
 {
-    public class Track : IAlbumContainer
+    public class Podcast : IAlbumContainer
     {
         //идентификатор
         public int Id { get; set; }

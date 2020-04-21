@@ -1,6 +1,6 @@
 ﻿namespace Media.Domain.Contracts
 {
-    public interface IAuthorIdentity
+    public interface IPodcastIdentity
     {
         int Id { get; }
     }

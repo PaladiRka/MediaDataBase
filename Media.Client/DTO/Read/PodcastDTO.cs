@@ -1,22 +1,19 @@
-﻿using Media.Domain.Contracts;
-
-namespace Media.Domain
+﻿namespace Media.Client.DTO.Read
 {
-    public class Track : IAlbumContainer
+    public class PodcastDTO
     {
         //идентификатор
         public int Id { get; set; }
         
         //Название книги
         public string Title { get; set; }
-        
+
         //Автор
         public string Author { get; set; }
 
-        //Длительность
+        //Возрастное ограничение
         public int Duration { get; set; }
-        public Album Album { get; set; }
-        public int? AlbumId => Album.Id;
 
+        public AlbumDTO Album { get; set; }
     }
 }
